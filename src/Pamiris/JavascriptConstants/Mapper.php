@@ -14,7 +14,14 @@ namespace Pamiris\JavascriptConstants;
  */
 class Mapper
 {
-    public static function getJavascriptConstants($classname, $constantObjectName = false)
+    /**
+     * 
+     * @param string $classname
+     * @param string $constantObjectName
+     * @return string
+     * @throws \Exception
+     */
+    public static function getJavascriptObject($classname, $constantObjectName = false)
     {
         if (!class_exists($classname)) {
             throw new \Exception(sprintf("JavascriptConstants: We can't seem to find a definition for %s;"
@@ -27,9 +34,13 @@ class Mapper
         }
         
         return self::writeJavascriptConstantObject($constantObjectName, self::getClassConstants($classname));
-        
     }
     
+    /**
+     * 
+     * @param string $classname
+     * @return array
+     */
     protected static function getClassConstants($classname)
     {
         $reflection = new \ReflectionClass($classname);
@@ -40,6 +51,12 @@ class Mapper
         return $constants;
     }
     
+    /**
+     * 
+     * @param string $objectName
+     * @param array $constants
+     * @return string
+     */
     protected static function writeJavascriptConstantObject($objectName, $constants)
     {
         $definition = "const " . $objectName . " = "

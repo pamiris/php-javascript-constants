@@ -19,12 +19,12 @@ class MapperTest extends \PHPUnit_Framework_TestCase
     public function testExceptionOnNonExistentClass()
     {
         $this->setExpectedException('Exception');
-        Mapper::getJavascriptConstants('NotARealClass');
+        Mapper::getJavascriptObject('NotARealClass');
     }
     
     public function testMapClassWithName()
     {
-        $json = Mapper::getJavascriptConstants('Tests\Pamiris\JavascriptConstants\SomeConstantObject', 'SomeConstants');
+        $json = Mapper::getJavascriptObject('Tests\Pamiris\JavascriptConstants\SomeConstantObject', 'SomeConstants');
         $expected = 'const SomeConstants = {"ONE":1,"VALUE":2};';
         
         $this->assertEquals($expected, $json);
@@ -32,7 +32,7 @@ class MapperTest extends \PHPUnit_Framework_TestCase
     
     public function testMapClassWithoutName()
     {
-        $json = Mapper::getJavascriptConstants('Tests\Pamiris\JavascriptConstants\SomeConstantObject');
+        $json = Mapper::getJavascriptObject('Tests\Pamiris\JavascriptConstants\SomeConstantObject');
         $expected = 'const SomeConstantObject = {"ONE":1,"VALUE":2};';
         
         $this->assertEquals($expected, $json);
