@@ -52,6 +52,10 @@ function someAction()
 {% endblock %}
 ```
 
+TODO
+-------------------
+Add Twig extension and bundle to auto-configure.
+
 Notes
 -------------------
 This requires ES2015, which is supported in [most broswers](http://caniuse.com/#search=const). Safari will let you overwrite the objects, Chrome and Firefox will not.
