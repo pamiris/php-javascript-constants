@@ -58,4 +58,4 @@ This requires ES2015, which is supported in [most broswers](http://caniuse.com/#
 
 License
 --------------------
-is licensed under the MIT License - see the LICENSE file for details
+PHP JavascriptConstants is licensed under the MIT License - see the LICENSE file for details.
