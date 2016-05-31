@@ -1,6 +1,14 @@
 {
     "name": "pamiris/javascript-constants",
     "description": "A simple tool for converting PHP constant classes into javascript constant objects",
+    "keywords": ["javascript", "constants", "portability"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bryan J. Agee",
+            "email": "bryan@pamiris.com"
+        }
+    ],    
     "require" : {
         "php": ">=5.5"
     },
